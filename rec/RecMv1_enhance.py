@@ -13,8 +13,8 @@ class Hardsigmoid(nn.Module):
         self.inplace = inplace
 
     def forward(self, x):
-        return (1.2 * x).add_(3.).clamp_(0., 6.).div_(6.)
-        # return F.relu6(x + 3., inplace=True) / 6.
+        # return (1.2 * x).add_(3.).clamp_(0., 6.).div_(6.)
+        return F.relu6(x + 3., inplace=True) / 6.
 
 # class Hardsigmoid(nn.Module):
 #     def __init__(self, type):
